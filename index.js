@@ -7,7 +7,7 @@ app.use(express.text({ type: 'text/html', limit: '5mb' }));
 app.post('/pdf', async (req, res) => {
   try {
     const browser = await puppeteer.launch({
-      headless: 'new',
+      headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const page = await browser.newPage();
